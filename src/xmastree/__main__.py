@@ -15,6 +15,12 @@ try:
                 light.color = top_light_colors[0]
             else:
                 light.color = (random(), random(), random())
-        sleep(.5)
+        for light in tree:
+            light.off()
+            light.on()
+            light.off()
+            light.on()
+            light.off()
+            light.on()
 except KeyboardInterrupt:
     tree.off()
