@@ -8,6 +8,7 @@ class Pixel:
     def __init__(self, parent, index):
         self.parent = parent
         self.index = index
+        self.last_color = (1, 1, 1)
 
     @property
     def value(self):
@@ -27,9 +28,10 @@ class Pixel:
     def color(self, c):
         r, g, b = c
         self.value = (r, g, b)
+        self.last_color = (r, g, b)
 
     def on(self):
-        self.value = (1, 1, 1)
+        self.value = self.last_color
 
     def off(self):
         self.value = (0, 0, 0)
