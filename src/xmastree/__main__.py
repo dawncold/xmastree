@@ -3,7 +3,7 @@ from xmastree.tree import RGBXmasTree
 from colorzero import Color
 from time import sleep
 
-tree = RGBXmasTree(brightness=.1)
+tree = RGBXmasTree()
 
 top_light_colors = [Color('yellow'), Color('blue')]
 
