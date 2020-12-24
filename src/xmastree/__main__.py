@@ -1,4 +1,4 @@
-from random import shuffle
+from random import shuffle, random
 from xmastree.tree import RGBXmasTree
 from colorzero import Color
 from time import sleep
@@ -6,7 +6,6 @@ from time import sleep
 tree = RGBXmasTree(brightness=.1)
 
 top_light_colors = [Color('yellow'), Color('blue')]
-other_colors = [Color('red'), Color('green'), Color('white'), Color('blue'), Color('yellow')]
 
 try:
     while 1:
@@ -15,8 +14,7 @@ try:
                 shuffle(top_light_colors)
                 light.color = top_light_colors[0]
             else:
-                shuffle(other_colors)
-                light.color = other_colors[0]
+                light.color = (random(), random(), random())
         sleep(.5)
 except KeyboardInterrupt:
     tree.off()
